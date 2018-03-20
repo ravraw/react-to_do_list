@@ -1,22 +1,26 @@
 import React from "react";
-import Header from "./components/header";
-import AddTask from "./components/addTask";
-import Tasks from "./components/tasks";
-
-class App extends React.Component{
-
-  addTaskhandler = () =>{
-
-  }
-  
-  render(){
+import "./App.css";
+import Form from "./components/Form";
+import List from "./components/List";
+class App extends React.Component {
+  state = {
+    inputValue: ""
+}
+changeHandler = (input) => {
+  console.log(input);
+  this.setState({inputValue:input});
+}
+  render (){
     return(
       <div>
-        <Header />
-        <AddTask onClick = {this.addTaskhandler}/>
-        <Tasks />
+        <h1>React To-do App</h1>
+        <Form 
+          inputValue = {this.state.inputValue}
+          changeHandler = {this.changeHandler}/>
+        <List />
       </div>
     )
   };
 };
-export default App ;
+export default App;
+
