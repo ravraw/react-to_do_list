@@ -27,9 +27,15 @@ submitHandler = (event) =>{
     todos: todos,
     inputValue: ""
   });
-  
 
+}  
+  
+clickHandler = (index) => {
+  const todos = this.state.todos;
+  todos[index].done = !todos[index].done;
+  this.setState({todos: todos});
 }
+
   render (){
     return(
       <div>
@@ -38,7 +44,9 @@ submitHandler = (event) =>{
           submitHandler = {this.submitHandler}
           inputValue = {this.state.inputValue}
           changeHandler = {this.changeHandler}/>
-        <List todos = {this.state.todos} />
+        <List 
+          clickHandler = {this.clickHandler}
+          todos = {this.state.todos} />
       </div>
     )
   };

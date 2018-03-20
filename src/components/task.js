@@ -8,7 +8,9 @@ class Task extends React.Component {
                 <span style = {{textDecoration:this.props.todo.done ? "line-through" : "none"}}>
                     {this.props.todo.value}
                 </span>
-                <button>{this.props.todo.done ? 'Undo' : 'Complete'}</button>
+                <button onClick = {() => this.props.clickHandler(this.props.index)}>
+                    {this.props.todo.done ? 'Undo' : 'Complete'}
+                </button>
             </div>
         )
     };

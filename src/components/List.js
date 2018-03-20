@@ -9,7 +9,9 @@ class List extends React.Component {
                 {this.props.todos.map((todo,index) => {
                     return(
                         <Task 
+                            clickHandler = {this.props.clickHandler}
                             key={index}
+                            index ={index}
                             todo ={todo}  />
                     )
                 })}
