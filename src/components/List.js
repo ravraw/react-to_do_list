@@ -2,16 +2,11 @@ import React from "react";
 import Task from "./Task";
 
 class List extends React.Component {
-    state = {
-        todos:[
-            {value:"Clean the kichen ", done: false},
-            {value:"wash the car", done: true},
-        ]
-    }
+    
     render() {
         return(
             <div>
-                {this.state.todos.map((todo,index) => {
+                {this.props.todos.map((todo,index) => {
                     return(
                         <Task 
                             key={index}
@@ -19,7 +14,7 @@ class List extends React.Component {
                     )
                 })}
                 
-            </div>    
+            </div> 
         )
     };
 };
